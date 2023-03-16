@@ -1,0 +1,28 @@
+.headerPrincipal {
+  width: 100vw;
+  height: 15vh;
+  background-color: aqua;
+  border-bottom: 1px solid black;
+
+  .botao1 {
+    display: flex;
+    position: absolute;
+    right: 3rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: -1.9rem;
+    background-color: rgb(42, 165, 114);
+    width: 5rem;
+    height: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transition: 1s;
+ 
+
+    &:hover {
+        background-color: white;
+        scale: 1.1;
+    }
+  }
+}
