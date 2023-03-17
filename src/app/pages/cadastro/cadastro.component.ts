@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Paciente } from '../interface/inferface';
+import { Dependentes } from '../interface/inferface';
 
 @Component({
   selector: 'app-cadastro',
@@ -6,7 +8,48 @@ import { Component } from '@angular/core';
   styleUrls: ['./cadastro.component.scss']
 })
 export class CadastroComponent {
-  selector = 'menu-overview-example' ;
-  templateUrl = 'menu-overview-example.html' ;
+  paciente: Paciente = {
+    nome: '',
+    idade: 0,
+    dependentes: []
+  };
+
+  dependente: Dependentes = {
+    nome: '',
+    idade: 0,
+  };
+
+  pacientes: Paciente[] = [];
+  
+
+  adicionarDependente() {
+    this.paciente.dependentes.push({ ...this.dependente });
+
+    this.dependente = {
+      nome: '',
+      idade: 0
+    };
+  }
+
+  salvar() {
+    this.pacientes.push({ ...this.paciente });
+    this.paciente = {
+      nome: '',
+      idade: 0,
+      dependentes: []
+    };
+  }
+
+  excluirDependente(index: number) {
+    this.paciente.dependentes.splice(index, 1);
+  }
+  
+  camposPreenchidos(): boolean {
+    return !!this.paciente.nome && !!this.paciente.idade;
+  }
+  excluirPaciente(paciente: any) {
+    const index = this.pacientes.indexOf(paciente);
+    this.pacientes.splice(index, 1);
+  }
+  
 }
-export class MenuOverviewExample {}

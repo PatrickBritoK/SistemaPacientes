@@ -1,8 +1,13 @@
+body {
+  overflow: hidden;
+}
+
 .headerPrincipal {
   width: 100vw;
   height: 15vh;
-  background-color: aqua;
+  background-color: rgb(12, 201, 154);
   border-bottom: 1px solid black;
+  overflow: hidden;
 
   .botao1 {
     display: flex;
@@ -11,18 +16,32 @@
     border: 1px solid black;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: -1.9rem;
-    background-color: rgb(42, 165, 114);
+    margin-top: -2.2rem;
+    background-color: rgb(255, 255, 255);
     width: 5rem;
     height: 1.5rem;
     align-items: center;
     justify-content: center;
     transition: 1s;
  
-
     &:hover {
-        background-color: white;
+        background-color: rgb(190, 36, 36);
         scale: 1.1;
     }
+  }
+}
+.example-container {
+  background-color: cornflowerblue;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  
+  .botaoAdd {
+    background-color: rgb(255, 255, 255);
+    width: 7rem;
+    height: 3rem;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
   }
 }
