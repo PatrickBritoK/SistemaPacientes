@@ -16,7 +16,7 @@
                     <div class="formulario">
                         <mat-form-field>
                             <input matInput placeholder="Nome" [(ngModel)]="paciente.nome">
-
+                            
                         </mat-form-field>
                         <mat-form-field>
                             <input matInput type="number" placeholder="Idade" [(ngModel)]="paciente.idade">
@@ -25,13 +25,18 @@
                             <mat-form-field>
                                 <input matInput placeholder="Nome do Dependente" [(ngModel)]="dependente.nome">
                             </mat-form-field>
+                            
                             <mat-form-field>
                                 <input matInput type="number" placeholder="Idade do Dependente"
                                     [(ngModel)]="dependente.idade">
                             </mat-form-field>
+                            
                         </div>
                         <button class="botaoAdd" (click)="adicionarDependente()">Adicionar Dependente</button>
                         <button class="botaoAdd" (click)="salvar()" [disabled]="!camposPreenchidos()">Salvar</button>
+                        <button class="botaoAdd" (click)="atualizar()">Atualizar</button>
+
+                        
 
 
                         <mat-accordion>
@@ -42,6 +47,7 @@
                                     <button mat-icon-button (click)="excluirPaciente(paciente)">
                                         <mat-icon>delete</mat-icon>
                                     </button>
+                                    
                                 </mat-expansion-panel-header>
                                 <p>Dependentes:</p>
                                 <ul>

@@ -21,6 +21,7 @@ export class CadastroComponent {
 
   pacientes: Paciente[] = [];
   
+  
 
   adicionarDependente() {
     this.paciente.dependentes.push({ ...this.dependente });
@@ -51,5 +52,13 @@ export class CadastroComponent {
     const index = this.pacientes.indexOf(paciente);
     this.pacientes.splice(index, 1);
   }
+  atualizar() {
+    // encontrar o índice do paciente atual na lista de pacientes
+    const index = this.pacientes.findIndex(p => p === this.paciente);
+    
+    // atualizar os dados do paciente na lista de pacientes
+    this.pacientes[index] = this.paciente;
+  }
+
   
 }
